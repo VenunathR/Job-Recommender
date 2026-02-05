@@ -6,8 +6,8 @@ Processes job descriptions using NLP
 Finds similar jobs using semantic search
 Shows recommended jobs on a web page
 Technologies used
-Python
-Flask
-Sentence Transformers
-FAISS
-Pandas
+Python,
+Flask,
+Sentence Transformers,
+FAISS,
+Pandas.
