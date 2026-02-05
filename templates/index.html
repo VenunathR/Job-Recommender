@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Job Recommender</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(120deg, #4e73df, #1cc88a);
+            color: #333;
+            text-align: center;
+            padding: 40px;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 60%;
+            margin: auto;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        input {
+            padding: 10px;
+            width: 60%;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 10px 20px;
+            background: #4e73df;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        li {
+            margin: 15px 0;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>🔍 AI Job Recommender</h2>
+
+    <form method="POST">
+        <input type="text" name="skills" placeholder="Enter skills (Python, ML, SQL)" required>
+        <button type="submit">Find Jobs</button>
+    </form>
+
+    {% if jobs is not none and not jobs.empty %}
+
+    <h3>Recommended Jobs</h3>
+    <ul>
+    {% for _, row in jobs.iterrows() %}
+        <li>
+            <b>{{row['Job Title']}}</b><br>
+            {{row['Job Description']}}
+        </li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+</div>
+</body>
+</html>
